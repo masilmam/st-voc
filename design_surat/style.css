@@ -1,0 +1,37 @@
+#wrapper {
+  margin:auto;
+  width:93.75%;
+}
+#header {
+  height:100px;
+  width:100%;
+}
+.kopsurat {
+  text-align:center;
+}
+.fakultas {
+  font-size:22px;
+  text-align:center;
+}
+.alamatkop {
+  font-size:10px;
+  font-family:Century Gothic;
+  text-align:center;
+}
+.logo {
+  float:left;
+}
+.surattugas, .surattugas pre {
+  font-family:Arial;
+  font-size:14px;
+  text-align:center;
+}
+.content, .ttd {
+  font-family: "Times New Roman", Times, serif;
+  font-size:14px;
+  text-align:justify;
+}
+
+.ttd {
+  margin-left:60%;
+}
