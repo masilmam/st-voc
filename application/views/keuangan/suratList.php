@@ -160,7 +160,7 @@ function tanggal($tgl) {
                         <td><?php echo tanggal($s->tgl_berangkat).' - '.tanggal($s->tgl_kembali); ?></td>
                         <td><?php echo $s->nama_kegiatan; ?></td>
                         <td><span class="<?php echo $badge; ?>"><?php echo $teks; ?></span></td>
-                        <td><a href="<?php echo base_url('Katu/suratDetail/').$s->id_surat; ?>" class="btn btn-secondary btn-sm btn-block" style="color: #ffffff;"><i class="fa fa-external-link"></i>&nbsp; Detail<a/></td>
+                        <td><a href="<?php echo base_url('Keuangan/suratDetail/').$s->id_surat; ?>" class="btn btn-secondary btn-sm btn-block" style="color: #ffffff;"><i class="fa fa-external-link"></i>&nbsp; Detail<a/></td>
                       </tr>
                     <?php } ?>
                     </tbody>

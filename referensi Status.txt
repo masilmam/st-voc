@@ -1,0 +1,8 @@
+1 = Pending , Tombol Disposisi | Tolak
+2 = Proses: Disetujui Dekan, Disposisi ke WD I
+3 = Proses: Disetujui Dekan, Disposisi ke WD II
+4 = Proses: Disetujui WD I, Disposisi ke Kepala TU
+5 = Proses: Disetujui WD II, Disposisi ke Kepala TU
+6 = Selesai, Disposisi ke Keuangan
+7 = Selesai
+8 = Ditolak

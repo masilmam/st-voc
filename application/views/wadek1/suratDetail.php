@@ -231,13 +231,15 @@ function romawi($number) {
                     <p><?php echo tanggal($suratDetail->tgl_kembali); ?></p>
                   </div>
                   <div class="col-md-12">
-                    <a href="<?php echo base_url('Katu/dokumen/').$suratDetail->dokumen; ?>" class="btn btn-warning" style="color:#fff"><i class="fa fa-paperclip"></i>&nbsp; Lihat Berkas</a>&nbsp;
-                    <a data-target="#disposisi" data-toggle="modal" href="#disposisi" class="btn btn-primary" style="color:#fff"><i class="fa fa-share"></i>&nbsp; Disposisi</a>&nbsp;
-                    <?php 
-                      if ($suratDetail->status < 6) {
+                    <a href="<?php echo base_url('Wadek1/dokumen/').$suratDetail->dokumen; ?>" class="btn btn-warning" style="color:#fff"><i class="fa fa-paperclip"></i>&nbsp; Lihat Berkas</a>&nbsp;
+                    <?php
+                      if ($suratDetail->status == 2) {
                     ?>
+                    <a data-target="#disposisi" data-toggle="modal" href="#disposisi" class="btn btn-primary" style="color:#fff"><i class="fa fa-share"></i>&nbsp; Disposisi</a>&nbsp;
                     <a href="#" class="btn btn-danger" style="color:#fff"><i class="fa fa-close"></i>&nbsp; Tolak</a>&nbsp;
-                    <?php } ?>
+                    <?php 
+                      }
+                    ?>
                   </div>
                 </div>
               </div>

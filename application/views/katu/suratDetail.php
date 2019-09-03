@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
       $( function() {
-        $( "#datepicker1,#datepicker2" ).datepicker({
+        $( "#datepicker,#datepicker1,#datepicker2" ).datepicker({
           dateFormat: 'yy-mm-dd',
           minDate: new Date()
         });
@@ -232,14 +232,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                   <div class="col-md-12">
                     <a href="<?php echo base_url('Katu/dokumen/').$suratDetail->dokumen; ?>" class="btn btn-warning" style="color:#fff"><i class="fa fa-paperclip"></i>&nbsp; Lihat Berkas</a>&nbsp;
-                    <a data-target="#disposisi" data-toggle="modal" href="#disposisi" class="btn btn-primary" style="color:#fff"><i class="fa fa-share"></i>&nbsp; Disposisi</a>&nbsp;
                     <?php
                       if ($suratDetail->no_surat == 0) {
                     ?>
                     <a data-target="#no_surat" data-toggle="modal" href="#no_surat" class="btn btn-success" style="color:#fff"><i class="fa fa-gavel"></i>&nbsp; Buat Nomor Surat</a>&nbsp;
                     <?php } 
-                      if ($suratDetail->status < 6) {
+                      if ($suratDetail->status == 4 || $suratDetail->status == 5) {
                     ?>
+                    <a data-target="#disposisi" data-toggle="modal" href="#disposisi" class="btn btn-primary" style="color:#fff"><i class="fa fa-share"></i>&nbsp; Disposisi</a>&nbsp;
                     <a data-target="#edit" data-toggle="modal" href="#edit" class="btn btn-info" style="color:#fff"><i class="fa fa-edit"></i>&nbsp; Edit</a>&nbsp;
                     <a href="#" class="btn btn-danger" style="color:#fff"><i class="fa fa-close"></i>&nbsp; Tolak</a>&nbsp;
                     <?php }
