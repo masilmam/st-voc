@@ -42,8 +42,8 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="<?php if($active == 'Dashboard') {echo 'active';}?>"><a href="<?php echo base_url('Dekan/dashboard'); ?>"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a></li>
-            <li class="<?php if($active == 'Data Surat Tugas') {echo 'active';}?>"><a href="<?php echo base_url('Dekan/suratList'); ?>"> <i class="menu-icon ti-file"></i>Data Surat Tugas</a></li>
+            <li class="<?php if($active == 'Dashboard') {echo 'active';}?>"><a href="<?php echo base_url('Wadek2/dashboard'); ?>"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a></li>
+            <li class="<?php if($active == 'Data Surat Tugas') {echo 'active';}?>"><a href="<?php echo base_url('Wadek2/suratList'); ?>"> <i class="menu-icon ti-file"></i>Data Surat Tugas</a></li>
             <li class="<?php if($active == 'Pengaturan') {echo 'active';}?>"><a href="#"> <i class="menu-icon ti-settings"></i>Pengaturan</a></li>
             <li><a href="<?php echo base_url('Main/logout'); ?>"> <i class="menu-icon ti-close"></i>Log Out</a></li>
           </ul>

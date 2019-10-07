@@ -22,18 +22,26 @@ class Wadek1 extends CI_Controller {
 		$data = array(
 			'suratList' => $this->M_surat->read_surat_where(array('status' => 2))->result(),
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+			'active' => 'Dashboard',
+			'judul' => 'Dashboard',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/wadek1',$data);
 		$this->load->view('wadek1/dashboard',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function suratList() {
 		$data = array(
 			'suratList' => $this->M_surat->read_surat()->result(),
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Data Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/wadek1',$data);
 		$this->load->view('wadek1/suratList',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function suratDetail($id) {
@@ -41,9 +49,13 @@ class Wadek1 extends CI_Controller {
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 			'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $id))->row(),
 			'disposisi' => $this->M_basic->read_where('st_disposisi',array('id_surat' => $id))->result(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Detail Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/wadek1',$data);
 		$this->load->view('wadek1/suratDetail',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function valid_date($str) {

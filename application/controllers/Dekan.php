@@ -28,7 +28,7 @@ class Dekan extends CI_Controller {
 		);
 		$this->load->view('header/dekan', $data);
 		$this->load->view('dekan/dashboard',$data);
-		$this->load->view('footer/dekan');
+		$this->load->view('v_footer');
 	}
 
 	public function suratList() {
@@ -41,7 +41,7 @@ class Dekan extends CI_Controller {
 		);
 		$this->load->view('header/dekan', $data);
 		$this->load->view('dekan/suratList',$data);
-		$this->load->view('footer/dekan', $data);
+		$this->load->view('v_footer',);
 	}
 
 	public function suratDetail($id) {
@@ -55,7 +55,7 @@ class Dekan extends CI_Controller {
 		);
 		$this->load->view('header/dekan',$data);
 		$this->load->view('dekan/suratDetail',$data);
-		$this->load->view('footer/dekan');
+		$this->load->view('v_footer');
 	}
 
 	public function valid_date($str) {

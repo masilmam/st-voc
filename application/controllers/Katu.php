@@ -22,9 +22,13 @@ class Katu extends CI_Controller {
 		$data = array(
 			'suratList' => $this->M_surat->read_surat_where_in(array(4,5))->result(),
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+			'active' => 'Dashboard',
+			'judul' => 'Dashboard',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/katu',$data);
 		$this->load->view('katu/dashboard',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function suratList() {
