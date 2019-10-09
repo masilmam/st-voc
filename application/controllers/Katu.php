@@ -35,9 +35,13 @@ class Katu extends CI_Controller {
 		$data = array(
 			'suratList' => $this->M_surat->read_surat()->result(),
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Data Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/katu',$data);
 		$this->load->view('katu/suratList',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function suratDetail($id) {
@@ -45,9 +49,13 @@ class Katu extends CI_Controller {
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 			'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $id))->row(),
 			'disposisi' => $this->M_basic->read_where('st_disposisi',array('id_surat' => $id))->result(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Detail Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/katu',$data);
 		$this->load->view('katu/suratDetail',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function valid_date($str) {

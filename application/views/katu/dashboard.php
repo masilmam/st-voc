@@ -25,7 +25,7 @@ function tanggal($tgl) {
         <div class="animated fadeIn">
           <div class="row">
             <div class="col-md-12">
-              <h3>Dashboard</h3><br />
+              <h3><?= $judul; ?></h3><br />
               <div class="card">
                 <div class="card-header">
                   <strong class="card-title">Daftar Permohonan Surat Tugas: Butuh Tindakan Oleh Kepala TU</strong>
