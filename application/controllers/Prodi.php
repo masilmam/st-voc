@@ -35,9 +35,13 @@ class Prodi extends CI_Controller {
 			'dosenList' => $this->M_basic->read_where('st_dosen',$where_dosen)->result(),
 			'suratList' => $this->M_surat->read_surat_where($where_surat)->result(),
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Data Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/prodi',$data);
 		$this->load->view('prodi/suratList',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function valid_date($str) {
@@ -74,9 +78,13 @@ class Prodi extends CI_Controller {
 				'dosenList' => $this->M_basic->read_where('st_dosen',$where_dosen)->result(),
 				'suratList' => $this->M_surat->read_surat()->result(),
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
+				'active' => 'Data Surat Tugas',
+				'judul' => 'Data Surat Tugas',
 				'msg' => $this->session->flashdata('msg')
 			);
+			$this->load->view('header/prodi',$data);
 			$this->load->view('prodi/suratList',$data);
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			$config['upload_path'] = './dokumen/';
@@ -172,8 +180,6 @@ class Prodi extends CI_Controller {
 				//upload gagal
 				$this->session->set_flashdata('msg', 'Upload file gagal, silahkan ulangi');
 				redirect(base_url('Prodi/suratList'));
-				/*print_r($this->upload->data());
-				echo $this->upload->display_errors();*/
 			} //end if upload file
 		} // end if form validation
 
@@ -184,9 +190,13 @@ class Prodi extends CI_Controller {
 		$data = array(
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 			'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $id))->row(),
+			'active' => 'Data Surat Tugas',
+			'judul' => 'Detail Surat Tugas',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/prodi',$data);
 		$this->load->view('prodi/suratDetail',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function dokumen($dokumen) {
@@ -209,9 +219,13 @@ class Prodi extends CI_Controller {
 		$data = array(
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 			'dosenList' => $this->M_basic->read_where('st_dosen',$where_dosen)->result(),
+			'active' => 'Data Dosen',
+			'judul' => 'Data Dosen',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/prodi',$data);
 		$this->load->view('prodi/dosenList',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function doAddDosen() {
@@ -234,9 +248,13 @@ class Prodi extends CI_Controller {
 			$data = array(
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 				'dosenList' => $this->M_basic->read_where('st_dosen',$where_dosen)->result(),
+				'active' => 'Data Dosen',
+				'judul' => 'Data Dosen',
 				'msg' => $this->session->flashdata('msg')
 			);
+			$this->load->view('header/prodi',$data);
 			$this->load->view('prodi/dosenList',$data);
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			$data = array(
@@ -256,9 +274,13 @@ class Prodi extends CI_Controller {
 		$data = array(
 			'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 			'dosen' => $this->M_basic->read_where('st_dosen',array('id_dosen' => $id))->row(),
+			'active' => 'Data Dosen',
+			'judul' => 'Edit Dosen',
 			'msg' => $this->session->flashdata('msg')
 		);
+		$this->load->view('header/prodi',$data);
 		$this->load->view('prodi/editDosen',$data);	
+		$this->load->view('v_footer');
 	}
 
 	public function doEditDosen() {
@@ -274,9 +296,13 @@ class Prodi extends CI_Controller {
 			$data = array(
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 				'dosen' => $this->M_basic->read_where('st_dosen',array('id_dosen' => $this->input->post('id_dosen')))->row(),
+				'active' => 'Data Dosen',
+				'judul' => 'Edit Dosen',
 				'msg' => $this->session->flashdata('msg')
 			);
-		$this->load->view('prodi/editDosen',$data);	
+			$this->load->view('header/prodi',$data);
+			$this->load->view('prodi/editDosen',$data);	
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			$data = array(

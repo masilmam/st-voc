@@ -30,8 +30,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
+  <style>
+      body {
+        background-image: url(<?php echo base_url('images/bg.jpg'); ?>);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        ackground-size: cover;
+      }
+  </style>
+
 </head>
-<body class="bg-dark">
+<body>
   <div class="sufee-login d-flex align-content-center flex-wrap">
     <div class="container">
       <div class="login-content">
@@ -48,16 +58,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <?php } ?>
         </div>
         <div class="login-form">
+            <center><img src="<?php echo base_url('design/icon.png'); ?>" alt="logo" height="100px"></center>
+            <h1 style="text-align: center;">Sistem Informasi<br />Permohonan Surat Tugas<br /><br /></h1>
           <form action="<?php echo base_url('Main/doLogin'); ?>" method="POST">
             <div class="form-group">
               <label>Username</label>
-              <input type="text" name="username" class="form-control" placeholder="Username">
+              <input type="text" name="username" class="form-control">
             </div>
               <div class="form-group">
               <label>Password</label>
-              <input type="password" name="password" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control">
             </div>
-              <input type="submit" value="Sign In" class="btn btn-success btn-flat m-b-30 m-t-30">
+              <input type="submit" value="Masuk ke Akun Anda" class="btn btn-success btn-flat m-b-30 m-t-30">
           </form>
         </div>
       </div>

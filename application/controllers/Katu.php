@@ -82,9 +82,13 @@ class Katu extends CI_Controller {
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 				'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $this->input->post('id_surat')))->row(),
 				'disposisi' => $this->M_basic->read_where('st_disposisi',array('id_surat' => $this->input->post('id_surat')))->result(),
+				'active' => 'Data Surat Tugas',
+				'judul' => 'Detail Surat Tugas',
 				'msg' => $this->session->flashdata('msg')
 			);
+			$this->load->view('header/katu',$data);
 			$this->load->view('katu/suratDetail',$data);
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			$data_disposisi = array(
@@ -120,9 +124,13 @@ class Katu extends CI_Controller {
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 				'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $this->input->post('id_surat')))->row(),
 				'disposisi' => $this->M_basic->read_where('st_disposisi',array('id_surat' => $this->input->post('id_surat')))->result(),
+				'active' => 'Data Surat Tugas',
+				'judul' => 'Detail Surat Tugas',
 				'msg' => $this->session->flashdata('msg')
 			);
+			$this->load->view('header/katu',$data);
 			$this->load->view('katu/suratDetail',$data);
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			$data = array(
@@ -159,9 +167,13 @@ class Katu extends CI_Controller {
 				'userDetail' => $this->M_basic->read_where('st_user',array('username' => $this->session->userdata('username')))->row(),
 				'suratDetail' => $this->M_surat->read_surat_where(array('id_surat' => $this->input->post('id_surat')))->row(),
 				'disposisi' => $this->M_basic->read_where('st_disposisi',array('id_surat' => $this->input->post('id_surat')))->result(),
+				'active' => 'Data Surat Tugas',
+				'judul' => 'Detail Surat Tugas',
 				'msg' => $this->session->flashdata('msg')
 			);
+			$this->load->view('header/katu',$data);
 			$this->load->view('katu/suratDetail',$data);
+			$this->load->view('v_footer');
 		} else {
 			//proses
 			//cek no surat terakhir
