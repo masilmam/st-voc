@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
-        ackground-size: cover;
+        background-size: cover;
       }
   </style>
 
